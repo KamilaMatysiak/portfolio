@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Navbar from './components/Navbar/Navbar';
+import Footer from './components/Footer/Footer';
+import Homepage from './components/Homepage';
+import { Outlet, Route, Routes } from 'react-router-dom';
+import Estate from './components/case_studies/RealEstates/Estate';
+import styled from '@emotion/styled';
+import DeathTracker from './components/case_studies/DeathTracker';
+import './style.scss'
 
 function App() {
+  const AppContainer = styled.div`
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  `
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppContainer>
+      <Navbar/>
+      <Outlet style={{flex: 1, minHeight: '100%'}}/>
+      <Routes>
+        <Route path="/" element={<Homepage />}/>
+        <Route path="/real-estate" element={<Estate />}/>
+        <Route path="/estate" element={<Estate />}/>
+        <Route path="/death-tracker" element={<DeathTracker />}/>
+      </Routes>
+
+      <Footer style={{marginTop: 'auto'}}/>
+
+  </AppContainer>
   );
 }
 

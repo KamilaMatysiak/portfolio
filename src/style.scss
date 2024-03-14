@@ -1,0 +1,30 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: #F8F8F8;
+}
+
+pre, code, kbd { -moz-tab-size:4; -o-tab-size:4; tab-size:4; }
+pre { white-space:pre-wrap; word-wrap:break-word; overflow:auto; }
+
+.main-header {
+    color: #666;
+    font-weight: 300;
+    font-size: 1.3rem;
+    padding-top: 72px;
+}
+
+.section {
+    width: 80%;
+    margin: 72px auto;
+}
+
+@media (max-width: 767px) {
+    .section {
+        margin: 48px auto;
+        width: 90%;
+    }
+}

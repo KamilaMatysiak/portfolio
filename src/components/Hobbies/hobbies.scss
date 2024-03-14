@@ -1,0 +1,103 @@
+.hobbies {
+    width: 100%;
+    margin: 24px auto 32px auto;
+}
+
+.hobby-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.hobby-tile {
+    margin: 0 8px;
+    border: 1px solid #555;
+    border-radius: 180px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    &--active {
+        border: 2px solid #1C88EC;
+        width: fit-content;
+    }
+
+    & &__icon {
+        margin: 8px;
+    }
+
+    &--active &__icon {
+        margin: 8px 8px 8px 12px;
+    }
+
+    & &__name {
+        display: none;
+        margin: 0 12px 0 4px;
+
+        &--active {
+            display: block;
+            font-weight: 600;
+            color: #1C88EC;
+        }
+    }
+
+    &:hover {
+        border: 1px solid #333;
+        box-shadow: 0 0 4px rgba(0,0,0,0.2);
+    }
+
+    &--active:hover {
+        border: 2px solid #1C88EC;
+        box-shadow: 0 0 4px rgb(28, 136, 236,0.2);
+    }
+}
+
+.hobby-card {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    justify-content: space-between;
+    margin: 16px 0;
+
+    & &__text {
+        max-width: 500px;
+        color: #333;
+        margin: 8px;
+    }
+
+    & &__img {
+        height: 400px;
+        margin-top: -72px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .hobby-tile {
+        margin: 8px;
+
+        &--active &__icon {
+            margin: 8px 12px;
+        }
+
+        & &__name--active {
+            display: none;
+        }
+    }
+
+    .hobby-card {
+        flex-wrap: wrap;
+        margin: auto;
+
+        & &__text {
+            max-width: 80%;
+            margin: 32px auto;
+        }
+
+        & &__img {
+            height: 300px;
+            margin: 16px auto;
+        }
+    }
+}

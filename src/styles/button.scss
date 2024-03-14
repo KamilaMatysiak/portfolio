@@ -1,0 +1,54 @@
+@import './root.scss';
+
+.button {
+    display: flex;
+    max-width: fit-content;
+    height: 40px;
+    border: 0;
+    border-radius: 2px;
+    padding: 0 16px;
+    margin-left: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all ease 0.1s;
+
+    & &__icon {
+        color: inherit;
+        width: 20px;
+        margin-right: 8px;
+    }
+
+    &--outlined {
+        background: none;
+        border: 2px solid var(--primary-color-400);
+        color: var(--primary-color-400);
+
+        &:hover {
+            border: 2px solid var(--primary-color-200);
+            color: var(--primary-color-200);
+            transform: scale(1.01);
+       }
+    }
+
+    &--contained {
+        background: var(--primary-color-400);
+        border: 2px solid var(--primary-color-400);
+        color: var(--text-white);
+    
+        &:hover {
+            border: 2px solid var(--primary-color-200);
+            background: var(--primary-color-200);
+            transform: scale(1.01);
+       }
+    }
+
+    &--disabled, &--disabled:hover {
+        cursor: default;
+        background: #c4c4c4;
+        border: 2px solid #c4c4c4;
+    }
+}
